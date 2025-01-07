@@ -1,0 +1,5 @@
+/* Configuracion de tailwinds postcss */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/*-------------------------------------*/

@@ -19,4 +19,24 @@ const Layout= ({children})=>{
 export default Layout
 ```
 
-- Componente **Card**, creamos una estructura para nuestras imagenes, luego consumiremos una api de productos. 
+- Componente **Card**, creamos una estructura para nuestras imagenes, luego consumiremos una api de productos.
+
+- API para pintar nuestros CARDS, una manera limpia de hacer peticiones es usando async/await.  
+usamos esta api falsa : https://dummyjson.com/products, pero tiene una estructura, donde debo acceder solo al array "products"
+```javascript
+    {
+        "products": [
+        ],
+        "total": 194,
+        "skip": 0,
+        "limit": 30
+    }
+
+// y en mi peticion de fetch accedemos :
+    const respuesta = await fetch('https://dummyjson.com/products') 
+    const datos1 = await respuesta.json()
+
+    // Visualizanco en consola.
+    console.log("RESPUESTA",respuesta)
+    console.log("DATOS(res a json)",datos1.products)
+```

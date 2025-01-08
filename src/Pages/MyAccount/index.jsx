@@ -1,12 +1,12 @@
+import Layout from "../../Components/Layout"
 
 function MyAccount(){
-
+    
     return(
-
         <>
-            <div>
-                myAccount
-            </div>
+            <Layout>
+                MyAccount
+            </Layout>
         </>
     )
 }

@@ -17,6 +17,9 @@ const CarritoCompraProvider = ( {children} )=>{
     const openProductDetalle = ()=>{setIsOpenProductDetalles(true)}
     const closeProductDetalle = ()=>{setIsOpenProductDetalles(false)}
 
+    // ProductDetalles - estado para mostrar productos, este estado debe almacenar la informacion de la CARD.
+    const [productoMostrar, setProductoMostrar] = useState({})
+
     return(
         <>
             <CarritoCompraContext.Provider value={{
@@ -25,7 +28,10 @@ const CarritoCompraProvider = ( {children} )=>{
 
                 isOpenProductDetalles,
                 openProductDetalle,
-                closeProductDetalle
+                closeProductDetalle,
+
+                productoMostrar,
+                setProductoMostrar
             }}>
                 {children}
             </CarritoCompraContext.Provider>

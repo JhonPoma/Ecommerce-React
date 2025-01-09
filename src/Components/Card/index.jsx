@@ -8,9 +8,14 @@ const Card= (propData)=>{
 
     const contexto = useContext(CarritoCompraContext)
 
+    const showProductos = (datosDeProductos)=>{
+        contexto.openProductDetalle()
+        contexto.setProductoMostrar(datosDeProductos)
+    }
+
     return(
         <>
-            <div onClick={()=>{contexto.openProductDetalle()}} 
+            <div onClick={()=>{ showProductos(propData.propData) }} 
                 className="bg-slate-100 cursor-pointer w-56 h-60 rounded-lg mb-4">
                 
                 <figure className='relative mb-2 w-full h-4/5 bg-blue-200'>

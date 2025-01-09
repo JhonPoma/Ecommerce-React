@@ -80,3 +80,6 @@ Usamos useContext para asociar mis paginas, uso el **CarritoCompraContext** que 
 
 - Creamos un sideMenu, cuando hago click en un producto este se visualize al costado derecho.  
 Para eso creamos un nuevo componente y dentro un **aside** que seria como un wrapper(envoltura)
+
+- Mostraremos los productos en nuestro aside(que es nuestro componente ProductoDetalle).  
+En CARD queremos que cuando se hague click, aparte de abrirse el aside, se guarde la informacion de ese CARD para luego mostrar en nuestro aside

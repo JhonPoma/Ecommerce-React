@@ -11,6 +11,8 @@ import SignIn from '../SignIn'
 
 import Navbar from '../../Components/Navbar/index.jsx'
 
+import CheckoutSideMenu from '../../Components/CheckoutSideMenu/index.jsx'
+
 import './App.css';
 
 const AppRoutes = ()=>{
@@ -54,6 +56,7 @@ function App() {
         <BrowserRouter>
           <AppRoutes/>
           <Navbar/>
+          <CheckoutSideMenu/>
         </BrowserRouter>
     </CarritoCompraProvider>
     </>

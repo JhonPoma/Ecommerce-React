@@ -12,7 +12,6 @@ const CarritoCompraProvider = ( {children} )=>{
 
     // ProductDetalles - Open/Close
     const [ isOpenProductDetalles, setIsOpenProductDetalles] = useState(false)
-
     const openProductDetalle = ()=>{setIsOpenProductDetalles(true)}
     const closeProductDetalle = ()=>{setIsOpenProductDetalles(false)}
 
@@ -21,6 +20,11 @@ const CarritoCompraProvider = ( {children} )=>{
 
     // Carrito de Compra - añadir productos al carrito
     const [carritoProductos, setCarritoProductos] = useState([]) // array de objetos
+
+    // Checkout Side Menu - Open/Close
+    const [ isOpenCheckoutSideMenu, setIsOpenCheckoutSideMenu] = useState(false)
+    const openCheckoutSideMenu = ()=>{setIsOpenCheckoutSideMenu(true)}
+    const closeCheckoutSideMenu = ()=>{setIsOpenCheckoutSideMenu(false)}
 
     return(
         <>
@@ -36,7 +40,11 @@ const CarritoCompraProvider = ( {children} )=>{
                 setProductoMostrar,
 
                 carritoProductos,
-                setCarritoProductos
+                setCarritoProductos,
+
+                isOpenCheckoutSideMenu,
+                openCheckoutSideMenu,
+                closeCheckoutSideMenu
             }}>
                 {children}
             </CarritoCompraContext.Provider>

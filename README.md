@@ -40,3 +40,33 @@ usamos esta api falsa : https://dummyjson.com/products, pero tiene una estructur
     console.log("RESPUESTA",respuesta)
     console.log("DATOS(res a json)",datos1.products)
 ```
+
+- Usaremos createContext, para generar un contexto global y este contendra a todos los compontentes.
+Se utiliza para definir un contexto que pueda ser accedido por cualquier componente dentro de un árbol de componentes.
+
+```javascript
+// En nuestro Context/index.jsx
+import { createContext } from "react";
+
+const carritoCompraContext = createContext()
+export const carritoCompraProvider = ( {childrenX} )=>{    
+        return(
+            <carritoCompraContext.Provider>
+                {childrenX}
+            </carritoCompraContext.Provider>
+        )
+    }
+```
+```javascript
+// En nuestro componente raíz App.jsx
+   return (
+    <>
+    <carritoCompraProvider>
+        <BrowserRouter>
+          <AppRoutes/>
+          <Navbar/>
+        </BrowserRouter>
+    </carritoCompraProvider>
+    </>
+  )
+```

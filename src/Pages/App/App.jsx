@@ -1,5 +1,6 @@
 
 import { useRoutes, BrowserRouter } from 'react-router-dom'
+import {carritoCompraProvider} from '../../Context/index.jsx'
 
 import Home from '../Home'
 import MyAccount from '../MyAccount'
@@ -49,10 +50,12 @@ function App() {
   return (
     
     <>
-      <BrowserRouter>
-        <AppRoutes/>
-        <Navbar/>
-      </BrowserRouter>
+    <carritoCompraProvider>
+        <BrowserRouter>
+          <AppRoutes/>
+          <Navbar/>
+        </BrowserRouter>
+    </carritoCompraProvider>
     </>
   )
 }

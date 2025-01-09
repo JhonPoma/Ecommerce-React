@@ -8,8 +8,7 @@ const CarritoCompraContext = createContext()
 const CarritoCompraProvider = ( {children} )=>{
     
     // Carrito de compra, incrementando
-    const [ contador, setContador ] = useState(0)
-    // console.log("contador : ", contador)
+    const [ contador, setContador ] = useState(0) // console.log("contador : ", contador)
 
     // ProductDetalles - Open/Close
     const [ isOpenProductDetalles, setIsOpenProductDetalles] = useState(false)
@@ -19,6 +18,9 @@ const CarritoCompraProvider = ( {children} )=>{
 
     // ProductDetalles - estado para mostrar productos, este estado debe almacenar la informacion de la CARD.
     const [productoMostrar, setProductoMostrar] = useState({})
+
+    // Carrito de Compra - añadir productos al carrito
+    const [carritoProductos, setCarritoProductos] = useState([]) // array de objetos
 
     return(
         <>
@@ -31,7 +33,10 @@ const CarritoCompraProvider = ( {children} )=>{
                 closeProductDetalle,
 
                 productoMostrar,
-                setProductoMostrar
+                setProductoMostrar,
+
+                carritoProductos,
+                setCarritoProductos
             }}>
                 {children}
             </CarritoCompraContext.Provider>

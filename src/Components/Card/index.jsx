@@ -13,6 +13,13 @@ const Card= (propData)=>{
         contexto.setProductoMostrar(datosDeProductos)
     }
 
+    const addProductosCarrito = (datosDeProductosParaElCarrito)=>{
+        contexto.setContador(contexto.contador+1)
+        contexto.setCarritoProductos([...contexto.carritoProductos, datosDeProductosParaElCarrito])
+        console.log("CARRITO: ",contexto.carritoProductos)
+      
+    }
+
     return(
         <>
             <div onClick={()=>{ showProductos(propData.propData) }} 
@@ -23,7 +30,7 @@ const Card= (propData)=>{
                     <img className="w-full h-full object-cover rounded-lg" src={propData.propData.images[0]} alt={propData.propData.title} />
                     <div 
                         className="absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1"
-                        onClick={ ()=>contexto.setContador(contexto.contador+1) }    
+                        onClick={ ()=> {addProductosCarrito(propData.propData)} }    
                         > 
                         +  
                     </div>

@@ -83,3 +83,5 @@ Para eso creamos un nuevo componente y dentro un **aside** que seria como un wra
 
 - Mostraremos los productos en nuestro aside(que es nuestro componente ProductoDetalle).  
 En CARD queremos que cuando se hague click, aparte de abrirse el aside, se guarde la informacion de ese CARD para luego mostrar en nuestro aside
+
+- Agregaremos productos al carrito, cuando se haga click en el icono "+", para eso creamos un estado **carritoProductos** que almacenara un **array de objetos**, cada que el usuario hace click se va agregando el objeto en el array, usamos para eso ***spread operator***

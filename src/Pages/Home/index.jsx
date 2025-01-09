@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 
 import Layout from "../../Components/Layout"
 import Card from "../../Components/Card"
+import ProductoDetalles from '../../Components/ProductoDetalle'
 
 function Home(){
     
@@ -50,6 +51,8 @@ function Home(){
                         })
                     }
                 </div>
+
+                <ProductoDetalles/>
 
             </Layout>
         </>

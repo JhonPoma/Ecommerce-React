@@ -76,3 +76,7 @@ export const carritoCompraProvider = ( {childrenX} )=>{
 instalamos para usar iconos : >npm install react-icons  
 podemos usar iconos : https://react-icons.github.io/react-icons/  
 Usamos useContext para asociar mis paginas, uso el **CarritoCompraContext** que eh creado.
+
+
+- Creamos un sideMenu, cuando hago click en un producto este se visualize al costado derecho.  
+Para eso creamos un nuevo componente y dentro un **aside** que seria como un wrapper(envoltura)

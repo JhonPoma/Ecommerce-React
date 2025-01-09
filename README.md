@@ -70,3 +70,9 @@ export const carritoCompraProvider = ( {childrenX} )=>{
     </>
   )
 ```
+
+
+- Comunicaremos elementos(pagimas), para que cuando hagamos click en nuestro card (dentro de HOME) se incremente nuestro carrito de compra(dentro de NavBar).  
+instalamos para usar iconos : >npm install react-icons  
+podemos usar iconos : https://react-icons.github.io/react-icons/  
+Usamos useContext para asociar mis paginas, uso el **CarritoCompraContext** que eh creado.

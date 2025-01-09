@@ -1,6 +1,11 @@
 import { NavLink } from "react-router-dom"
+import { FaCartShopping } from "react-icons/fa6";
+import { useContext } from "react";
+import { CarritoCompraContext} from '../../Context/index'
 
 const Navbar= ()=>{
+
+    const contextoxd = useContext(CarritoCompraContext)
 
     //Este estilo se mostrara cuando este seleccionado la ruta
     // EJEMPLO SIN USAR TAILWINDS, usamos un objeto JavaScript para manejar estilos.
@@ -76,8 +81,13 @@ const Navbar= ()=>{
                     SignIn
                   </NavLink>
                 </li>
-                <li>
-                  carrito
+                <li className="flex">
+                  <div className="pr-1">
+                    <FaCartShopping /> 
+                  </div>
+                  <div className="bg-slate-400 text-white pr-2 pl-2 rounded-lg font-bold">
+                     { contextoxd.contador}
+                  </div>                
                 </li>                
             </ul>
 

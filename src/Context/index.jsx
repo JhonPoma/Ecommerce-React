@@ -1,18 +1,27 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 
-const carritoCompraContext = createContext()
+const CarritoCompraContext = createContext()
 
 
-export const carritoCompraProvider = ( {childrenX} )=>{
+const CarritoCompraProvider = ( {children} )=>{
     
+    const [ contador, setContador ] = useState(0)
+    // console.log("contador : ", contador)
     return(
-        <carritoCompraContext.Provider>
-            {childrenX}
-        </carritoCompraContext.Provider>
+        <>
+            <CarritoCompraContext.Provider value={{
+                contador,
+                setContador
+            }}>
+                {children}
+            </CarritoCompraContext.Provider>
+        </>
     )
 
 }
 
+
+export { CarritoCompraContext, CarritoCompraProvider };
 
 

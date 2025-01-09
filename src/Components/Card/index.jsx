@@ -10,7 +10,9 @@ const Card= (propData)=>{
 
     return(
         <>
-            <div className="bg-slate-100 cursor-pointer w-56 h-60 rounded-lg mb-4">
+            <div onClick={()=>{contexto.openProductDetalle()}} 
+                className="bg-slate-100 cursor-pointer w-56 h-60 rounded-lg mb-4">
+                
                 <figure className='relative mb-2 w-full h-4/5 bg-blue-200'>
                     <span className="absolute bottom-0 left-0 bg-white/80 rounded-lg text-black text-xs m-2 px-3 py-0.5"> {propData.propData.category} </span>
                     <img className="w-full h-full object-cover rounded-lg" src={propData.propData.images[0]} alt={propData.propData.title} />

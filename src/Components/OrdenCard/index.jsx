@@ -1,9 +1,21 @@
+import { useContext } from "react";
+import { CarritoCompraContext } from "../../Context/index";
 import { IoMdClose } from "react-icons/io";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 
 const OrdenCart = (propiedadesVienenCheckoutSideMenu)=>{
 
     const {idProd, titulo, imagen, precio, manejadorEliminar} = propiedadesVienenCheckoutSideMenu
+
+
+    // Cada que el usuario elimine un producto del carrito, tambien debe disminuir el contador.
+    const contexto = useContext(CarritoCompraContext)
+
+    const elimandoProductosdDelCarrito=()=>{
+        manejadorEliminar(idProd)
+        contexto.setContador(contexto.contador - 1 )
+    }
+
 
     return(
         <>  
@@ -16,7 +28,7 @@ const OrdenCart = (propiedadesVienenCheckoutSideMenu)=>{
                 </div>
                 <div className="flex items-center gap-2">
                     <p className="text-lg font-medium">$ {precio} </p>
-                     <RiDeleteBin6Fill onClick={()=>manejadorEliminar(idProd)} className='h-6 w-6 text-red-600 cursor-pointer'/>
+                     <RiDeleteBin6Fill onClick={()=>elimandoProductosdDelCarrito()} className='h-6 w-6 text-red-600 cursor-pointer'/>
                 </div>
             </div>   
         

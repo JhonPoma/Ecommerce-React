@@ -93,3 +93,5 @@ En CARD queremos que cuando se hague click, aparte de abrirse el aside, se guard
 
 
 - Cuando agregamos productos al carrito esto se visualiza bien, pero se puede duplicar y eso esta mal, para eso Evitaremos duplicaciones bloqueando el simbolo "+" una vez seleccionado
+
+- Eliminaremos productos del carrito

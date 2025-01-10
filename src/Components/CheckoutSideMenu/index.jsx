@@ -8,6 +8,7 @@ import './styleCheckoutSideMenu.css'
 const CheckoutSideMenu = ()=>{
 
     const contexto = useContext(CarritoCompraContext)
+    console.log("CARRITO: ",contexto.carritoProductos)
 
     return(
         <>

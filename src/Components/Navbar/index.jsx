@@ -81,11 +81,11 @@ const Navbar= ()=>{
                     SignIn
                   </NavLink>
                 </li>
-                <li className="flex">
+                <li  onClick={ ()=>{contextoxd.openCheckoutSideMenu()} } className="flex">
                   <div className="pr-1">
-                    <FaCartShopping /> 
+                    <FaCartShopping className="cursor-pointer"/> 
                   </div>
-                  <div className="bg-slate-400 text-white pr-2 pl-2 rounded-lg font-bold">
+                  <div className="bg-slate-400 text-white pr-2 pl-2 rounded-lg font-bold cursor-pointer">
                      { contextoxd.contador}
                   </div>                
                 </li>                

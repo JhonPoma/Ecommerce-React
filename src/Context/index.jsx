@@ -26,6 +26,9 @@ const CarritoCompraProvider = ( {children} )=>{
     const openCheckoutSideMenu = ()=>{setIsOpenCheckoutSideMenu(true)}
     const closeCheckoutSideMenu = ()=>{setIsOpenCheckoutSideMenu(false)}
 
+    // Carrito de Compra - añadimos nuestra compra a una orden
+    const [orden, setOrden] = useState([])
+
     return(
         <>
             <CarritoCompraContext.Provider value={{
@@ -44,7 +47,10 @@ const CarritoCompraProvider = ( {children} )=>{
 
                 isOpenCheckoutSideMenu,
                 openCheckoutSideMenu,
-                closeCheckoutSideMenu
+                closeCheckoutSideMenu,
+            
+                orden,
+                setOrden
             }}>
                 {children}
             </CarritoCompraContext.Provider>

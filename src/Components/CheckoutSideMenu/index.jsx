@@ -1,14 +1,12 @@
 import { IoMdClose } from "react-icons/io";
 import { useContext } from "react";
 import { CarritoCompraContext } from "../../Context";
+import OrdenCart from '../OrdenCard/index'
+
 import './styleCheckoutSideMenu.css'
 
 const CheckoutSideMenu = ()=>{
-    /*
-isOpenCheckoutSideMenu,
-                openCheckoutSideMenu,
-                closeCheckoutSideMenu
-    */
+
     const contexto = useContext(CarritoCompraContext)
 
     return(
@@ -33,6 +31,23 @@ isOpenCheckoutSideMenu,
                         <span className="font-lite text-sm">{contexto.productoMostrar.description}</span>
                       </p>                    
                     </div> */}
+
+                    {
+                      contexto.carritoProductos.map( (elemento)=>{
+                        return(
+                          
+                            <OrdenCart 
+                              key={elemento.id}
+                              titulo = {elemento.title}
+                              imagen = {elemento.images?.[0]}
+                              precio = {elemento.price}
+                            />
+                          
+                          
+                        )
+                      })
+                    }
+
 
                 </div>
 

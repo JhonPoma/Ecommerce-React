@@ -88,3 +88,5 @@ En CARD queremos que cuando se hague click, aparte de abrirse el aside, se guard
 
 
 - Creamos un compoenente para visualizar los producto que estoy agregando al carrito, lo llamaremos ***CheckoutSideMenu***, ahi mostraremos ese array de objetos (que son los productos que vamos seleccionando para comprar)
+
+- Creamos un CARD pero para nuestros productos que estaran en MyOrden(en nuestro carrito)

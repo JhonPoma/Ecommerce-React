@@ -16,7 +16,11 @@ const OrdenCart = (propiedadesVienenCheckoutSideMenu)=>{
         contexto.setContador(contexto.contador - 1 )
     }
 
-
+    // Reenderizamos el Icono Eliminar Producto (papelera).
+    let renderizarIconoEliminar
+    if(manejadorEliminar){
+        renderizarIconoEliminar = <RiDeleteBin6Fill onClick={()=>elimandoProductosdDelCarrito()} className='h-6 w-6 text-red-600 cursor-pointer'/>
+    }   
     return(
         <>  
             <div className="flex justify-between items-center px-1">
@@ -28,7 +32,7 @@ const OrdenCart = (propiedadesVienenCheckoutSideMenu)=>{
                 </div>
                 <div className="flex items-center gap-2">
                     <p className="text-lg font-medium">$ {precio} </p>
-                     <RiDeleteBin6Fill onClick={()=>elimandoProductosdDelCarrito()} className='h-6 w-6 text-red-600 cursor-pointer'/>
+                    {renderizarIconoEliminar}
                 </div>
             </div>   
         

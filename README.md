@@ -98,3 +98,6 @@ En CARD queremos que cuando se hague click, aparte de abrirse el aside, se guard
 
 - Creamos una carpeta Utils, ahi creamos una funcion que nos servira para realizar la suma total de los precios del carrito.  
 Carpeta Utils: se utiliza comúnmente para almacenar funciones o módulos de utilidad que realizan tareas comunes y que pueden ser reutilizadas en diferentes partes de la aplicación. Estas funciones suelen ser independientes del componente, y su propósito es ayudar con la lógica reutilizable, sin necesidad de duplicarla.
+
+
+- Visualizamos nuestro checkout(ordenes registradas) en la pagina que creamos "MyOrders", para eso volvemos a usar el componente **<Link/>** de React de la biblioteca ***react-router-dom***, cuando hagamos click en el boton "checkout" este nos lleve a la pagina "MyOrders/last" y visualizaremos el ultimo grupo de productos que hicimos checkout , para eso usamos **contexto.orden?.slice(-1)[0].prodOrden**

@@ -1,6 +1,7 @@
 import { IoMdClose } from "react-icons/io";
 import { useContext } from "react";
 import { CarritoCompraContext } from "../../Context";
+import { Link } from "react-router-dom";
 import OrdenCart from '../OrdenCard/index'
 import sumaPreciosTotal from '../../utils/sumaPrecios.js'
 
@@ -46,6 +47,9 @@ const CheckoutSideMenu = ()=>{
       // Limpiamos la cantidad de productos del carrito, lo llevamos a 0
       contexto.setContador(0)
 
+      // Cerramos el checkoutSide
+      contexto.closeCheckoutSideMenu()
+
       //console.log("MI ORDENNNN : ", contexto.orden)
     }
 
@@ -83,7 +87,11 @@ const CheckoutSideMenu = ()=>{
                 <span className="font-bold text-2xl pr-4"> $ {sumaPreciosTotal(contexto.carritoProductos)} </span>         
               </div>
 
-              <button  onClick={()=>handleeParaCheckout()} className="bg-black text-white mx-8 rounded-full py-2 mb-6"> Checkout </button>
+              <div className="bg-black text-white mx-8 rounded-full py-2 mb-6">
+                <Link to='/my-orders/last' className="flex justify-center">
+                  <button  onClick={()=>handleeParaCheckout()} > Checkout </button>
+                </Link>
+              </div>
                 
 
             </aside>

@@ -28,7 +28,7 @@ const Navbar= ()=>{
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to='/all' style={({isActive})=>isActive?estiloActivado2:undefined}>
+                  <NavLink to='/' style={({isActive})=>isActive?estiloActivado2:undefined}>
                     Todo
                   </NavLink>
                 </li>

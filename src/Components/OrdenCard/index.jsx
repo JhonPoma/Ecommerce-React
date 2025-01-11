@@ -34,6 +34,7 @@ const OrdenCart = (propiedadesVienenCheckoutSideMenu)=>{
                     <p className="text-lg font-medium">$ {precio} </p>
                     {renderizarIconoEliminar}
                 </div>
+
             </div>   
         
         </>

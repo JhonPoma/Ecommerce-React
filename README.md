@@ -101,3 +101,5 @@ Carpeta Utils: se utiliza comúnmente para almacenar funciones o módulos de uti
 
 
 - Visualizamos nuestro checkout(ordenes registradas) en la pagina que creamos "MyOrders", para eso volvemos a usar el componente **<Link/>** de React de la biblioteca ***react-router-dom***, cuando hagamos click en el boton "checkout" este nos lleve a la pagina "MyOrders/last" y visualizaremos el ultimo grupo de productos que hicimos checkout , para eso usamos **contexto.orden?.slice(-1)[0].prodOrden**
+
+- visualizaremos en MyOrders la lista de todas mis ordenes por fecha de pedido, precio, total de productos. Poder navegar entre ordenes y si hago click en una orden que me lleve a la descripcion

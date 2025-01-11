@@ -31,9 +31,10 @@ const CheckoutSideMenu = ()=>{
       // Obtener la hora en formato de 24 horas 'hh:mm:ss' (ejemplo: '14:30:45')
       const horaFormateada = `${fechaActual.getHours().toString().padStart(2, '0')}:${fechaActual.getMinutes().toString().padStart(2, '0')}:${fechaActual.getSeconds().toString().padStart(2, '0')}`;
 
-
+      let id=1
       // Creamos un objeto para luego almacenarlo en el array de Orden
       const objOrden = {
+        idOrden : id++,
         date : `${fechaFormateada} ${horaFormateada}`,
         prodOrden : contexto.carritoProductos,
         'totalProductos' : contexto.carritoProductos.length,

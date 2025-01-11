@@ -1,5 +1,5 @@
 import { use } from "react";
-import { createContext, useState } from "react";
+import { createContext, useState , useEffect} from "react";
 
 
 const CarritoCompraContext = createContext()
@@ -29,6 +29,37 @@ const CarritoCompraProvider = ( {children} )=>{
     // Carrito de Compra - añadimos nuestra compra a una orden
     const [orden, setOrden] = useState([])
 
+
+    // Obtener productos de la api
+    const[items, setItems] = useState(null)
+
+    useEffect( ()=>{
+        const fecthDatos = async ()=>{
+            try{
+                //const respuesta = await fetch('https://api.escuelajs.co/api/v1/products')  // Aveces cae esta api, API-1
+                const respuesta = await fetch('https://dummyjson.com/products')             // Usamos otra api, API-2 
+                const datos1 = await respuesta.json()
+
+                // // Visualizanco en consola - API-1
+                // console.log("RESPUESTA",respuesta)
+                // console.log("DATOS(res a json)",datos1)            
+                //     // Estos datos en formato JSON lo almacenamos en nuestro Estado.
+                // setItems(datos1) //Guardamos el conjunto de datos1 en el estado        
+
+                // Visualizanco en consola - API-2
+                console.log("RESPUESTA",respuesta)
+                console.log("DATOS(res a json)",datos1.products)
+                    // Estos datos en formato JSON lo almacenamos en nuestro Estado.
+                setItems(datos1.products) //Guardamos el conjunto de datos1 en el estado
+            }
+            catch(error){
+                console.log(error)
+            }
+        }
+        fecthDatos();
+    },[])
+
+
     return(
         <>
             <CarritoCompraContext.Provider value={{
@@ -50,7 +81,10 @@ const CarritoCompraProvider = ( {children} )=>{
                 closeCheckoutSideMenu,
             
                 orden,
-                setOrden
+                setOrden,
+
+                items,
+                setItems
             }}>
                 {children}
             </CarritoCompraContext.Provider>

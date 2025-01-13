@@ -104,4 +104,4 @@ Carpeta Utils: se utiliza comúnmente para almacenar funciones o módulos de uti
 
 - visualizaremos en MyOrders la lista de todas mis ordenes por fecha de pedido, precio, total de productos. Poder navegar entre ordenes y si hago click en una orden que me lleve a la descripcion
 
-- Filtraremos los productos para una busqueda, para eso llevamos la peticion de la api al contexto para que todos puedan acceder
+- Filtraremos los productos para una busqueda por titulo, para eso llevamos la peticion de la api al contexto para que todos puedan acceder, creamos estados nuevos **busquedaPorTitulo**, **itemsFitrados**

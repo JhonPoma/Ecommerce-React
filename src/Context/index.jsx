@@ -32,6 +32,7 @@ const CarritoCompraProvider = ( {children} )=>{
 
     // Obtener productos de la api
     const[items, setItems] = useState(null)
+    const[itemsFiltrados, setItemsFiltrados] = useState(null)
 
     useEffect( ()=>{
         const fecthDatos = async ()=>{
@@ -59,7 +60,24 @@ const CarritoCompraProvider = ( {children} )=>{
         fecthDatos();
     },[])
 
+    // Obtener productos por Titulo
+    const [busquedaPorTitulo, setBusquedaPorTitulo ] = useState(null)
 
+    // Funcion para filtrar los items por Titulo
+    const ItemsFiltradosPorTitulo = (items, busquedaPorTitulo)=>{
+        return items?.filter( (ele)=> ele.title.toLowerCase().includes(busquedaPorTitulo.toLowerCase() ) )
+    }
+
+    useEffect( ()=>{
+        if(busquedaPorTitulo){
+            console.log("itemss: ",items)
+
+            console.log("buscamos: ",busquedaPorTitulo)
+            setItemsFiltrados(ItemsFiltradosPorTitulo(items, busquedaPorTitulo))
+        }
+    },[items, busquedaPorTitulo] )
+
+    // console.log("itemsFiltrados: ", itemsFiltrados)
     return(
         <>
             <CarritoCompraContext.Provider value={{
@@ -84,7 +102,12 @@ const CarritoCompraProvider = ( {children} )=>{
                 setOrden,
 
                 items,
-                setItems
+                setItems,
+
+                busquedaPorTitulo,
+                setBusquedaPorTitulo,
+
+                itemsFiltrados
             }}>
                 {children}
             </CarritoCompraContext.Provider>
